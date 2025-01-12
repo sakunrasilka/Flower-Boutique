@@ -1,0 +1,327 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloom Bliss - Flower Boutique</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Bloom Bliss</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="home">
+        <div class="hero">
+            <h1 id="typing-text" class="typing"></h1>
+            <p class="animated-text">Your one-stop destination for exquisite floral arrangements and gifts</p>
+            <a href="#products" class="btn">Shop Now</a>
+        </div>
+    </section>
+    
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>At Bloom Bliss, we believe flowers have the power to bring joy and beauty into life. Whether it's a wedding, birthday, or just because, our expert florists craft stunning arrangements tailored to your needs.</p>
+        </div>
+    </section>
+
+    <section id="products" class="products">
+        <div class="container">
+            <h2>Our Products</h2>
+            <div class="product-grid">
+                <div class="product">
+                    <img src="images/bouquet1.jpg" alt="Bouquet 1">
+                    <h3>Rose Delight</h3>
+                    <p>$49.99</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="images/bouquet2.jpg" alt="Bouquet 2">
+                    <h3>Sunshine Basket</h3>
+                    <p>$39.99</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="images/bouquet3.jpg" alt="Bouquet 3">
+                    <h3>Elegant Orchids</h3>
+                    <p>$59.99</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                <img src="images/gallery1.jpg" alt="Gallery Image 1">
+                <img src="images/gallery2.jpg" alt="Gallery Image 2">
+                <img src="images/gallery3.jpg" alt="Gallery Image 3">
+                <img src="images/gallery4.jpg" alt="Gallery Image 4">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form action="#">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Bloom Bliss | All Rights Reserved</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #ffb3b3;
+        }
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links li {
+            margin: 0 15px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        /* Home Section Styling */
+        .home {
+            position: relative;
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('images/hero.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Animation for Text */
+        .animated-text {
+            animation: slideIn 2s ease-out, fadeIn 3s ease-in;
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Button Styling */
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #ff6b6b;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(255, 107, 107, 0.5);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #ff3b3b;
+            transform: translateY(-2px);
+        }
+
+
+
+        /* About Section Styling */        
+        .home {
+            height: 100vh;
+            background: url('images/hero.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .home h1 {
+            color: #fff;
+            font-size: 48px;
+        }
+        .home p {
+            color: #fff;
+            font-size: 20px;
+        }
+        .home .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #fff;
+            color: #ff6666;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        section {
+            padding: 60px 20px;
+        }
+        .products .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        footer .social-links a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        /* Typing Effect Styling */
+        .typing {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid #fff;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+
+<script>
+    // Array of texts to display
+    const textArray = [
+        "Welcome to Bloom Bliss",
+        "Fresh Flowers, Always",
+        "Bouquets for Every Occasion",
+        "Make Someone's Day with Flowers"
+    ];
+    
+    const typingElement = document.getElementById("typing-text");
+    let currentTextIndex = 0;
+    let charIndex = 0;
+
+    function typeText() {
+        if (charIndex < textArray[currentTextIndex].length) {
+            // Add next character
+            typingElement.textContent += textArray[currentTextIndex].charAt(charIndex);
+            charIndex++;
+            setTimeout(typeText, 100); // Typing speed
+        } else {
+            // Pause before deleting
+            setTimeout(deleteText, 1000);
+        }
+    }
+
+    function deleteText() {
+        if (charIndex > 0) {
+            // Remove one character at a time
+            typingElement.textContent = textArray[currentTextIndex].substring(0, charIndex - 1);
+            charIndex--;
+            setTimeout(deleteText, 50); // Deleting speed
+        } else {
+            // Move to next text
+            currentTextIndex = (currentTextIndex + 1) % textArray.length;
+            setTimeout(typeText, 500); // Pause before typing next text
+        }
+    }
+
+    // Start typing effect
+    typeText();
+</script>
+
+</body>
+</html>
