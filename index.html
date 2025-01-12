@@ -48,6 +48,47 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
+        .products-container, .gallery-container {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        }
+
+        .product, .gallery-item {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .product img, .gallery-item img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .feedback-form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .feedback-form input, .feedback-form textarea, .feedback-form button {
+            padding: 0.5rem;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        .feedback-form button {
+            background-color: #98ef80;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .feedback-form button:hover {
+            background-color: #86d46e;
+        }
+
         footer {
             text-align: center;
             padding: 1rem 0;
@@ -69,7 +110,7 @@
             }
 
             .section {
-                max-width: 600px;
+                max-width: 800px;
                 margin: 1rem auto;
             }
         }
@@ -81,36 +122,73 @@
     </header>
 
     <nav>
-        <a href="#Products">Home</a>
-        <a href="#Gallery">About</a>
-        <a href="#FeedBack">Services</a>
+        <a href="#Products">Products</a>
+        <a href="#Gallery">Gallery</a>
+        <a href="#FeedBack">FeedBack</a>
         <a href="#contact">Contact</a>
     </nav>
 
     <div class="content">
-        <div class="Products" id="home">
-            <h2>Home</h2>
-            <p>Welcome to the mobile-friendly website! Explore our content and learn more about what we offer.</p>
+        <!-- Products Section -->
+        <div class="section" id="Products">
+            <h2>Our Products</h2>
+            <div class="products-container">
+                <div class="product">
+                    <img src="https://via.placeholder.com/150" alt="Product 1">
+                    <h3>Rose Bouquet</h3>
+                    <p>Price: $30</p>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/150" alt="Product 2">
+                    <h3>Tulip Arrangement</h3>
+                    <p>Price: $25</p>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/150" alt="Product 3">
+                    <h3>Orchid Pot</h3>
+                    <p>Price: $40</p>
+                </div>
+            </div>
         </div>
 
-        <div class="Gallery" id="about">
-            <h2>About</h2>
-            <p>This website is designed to be responsive and user-friendly, ensuring a great experience on all devices.</p>
+        <!-- Gallery Section -->
+        <div class="section" id="Gallery">
+            <h2>Gallery</h2>
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/150" alt="Gallery Image 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/150" alt="Gallery Image 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/150" alt="Gallery Image 3">
+                </div>
+            </div>
         </div>
 
-        <div class="FeedBack" id="services">
-            <h2>Services</h2>
-            <p>We provide a wide range of services to meet your needs, from web development to digital marketing.</p>
+        <!-- Feedback Section -->
+        <div class="section" id="FeedBack">
+            <h2>Feedback</h2>
+            <form class="feedback-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Feedback" rows="4" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
         </div>
 
-        <div class="contact" id="contact">
-            <h2>Contact</h2>
-            <p>Feel free to reach out to us for more information or to get started on your next project!</p>
+        <!-- Contact Section -->
+        <div class="section" id="contact">
+            <h2>Contact Us</h2>
+            <p>Email: support@juliaflowers.com</p>
+            <p>Phone: +1 234 567 890</p>
+            <p>Address: 123 Flower Street, Bloom City, FL</p>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2025 Your Name. All rights reserved.</p>
+        <p>&copy; 2025 Julia Flowers. All rights reserved.</p>
     </footer>
 </body>
 </html>
