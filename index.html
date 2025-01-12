@@ -68,6 +68,7 @@
             padding: 1rem;
             text-align: center;
             width: 200px;
+            cursor: pointer;
         }
 
         .product img {
@@ -141,6 +142,46 @@
                 margin: 1rem auto;
             }
         }
+
+        #productModal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            overflow: auto;
+        }
+
+        #productModal .modal-content {
+            background: white;
+            color: black;
+            padding: 20px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            position: relative;
+        }
+
+        #productModal .modal-content img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        #closeModal {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 24px;
+            color: black;
+        }
     </style>
 </head>
 <body>
@@ -161,17 +202,17 @@
             <h2>Our Products</h2>
             <h3>PREMIUM</h3>
             <div class="products-row">
-                <div class="product">
+                <div class="product" onclick="showModal('images/IMG_20250112_221128_974.jpg', 'Rose Bouquet', '$30', 'A beautiful bouquet of fresh roses. Perfect for any occasion.')">
                     <img src="images/IMG_20250112_221128_974.jpg" alt="Product 1">
                     <h3>Rose Bouquet</h3>
                     <p>Price: $30</p>
                 </div>
-                <div class="product">
+                <div class="product" onclick="showModal('images/IMG_20250112_221153_320.jpg', 'Tulip Arrangement', '$25', 'A vibrant arrangement of tulips for your loved ones.')">
                     <img src="images/IMG_20250112_221153_320.jpg" alt="Product 2">
                     <h3>Tulip Arrangement</h3>
                     <p>Price: $25</p>
                 </div>
-                <div class="product">
+                <div class="product" onclick="showModal('images/IMG_20250112_221502_788.jpg', 'Orchid Pot', '$40', 'A sophisticated orchid pot for a touch of elegance.')">
                     <img src="images/IMG_20250112_221502_788.jpg" alt="Product 3">
                     <h3>Orchid Pot</h3>
                     <p>Price: $40</p>
@@ -179,17 +220,17 @@
             </div>
             <h3>STANDARD</h3>
             <div class="products-row">
-                <div class="product">
+                <div class="product" onclick="showModal('images/IMG_20250112_221513_072.jpg', 'Lily Basket', '$35', 'A charming lily basket that brightens any room.')">
                     <img src="images/IMG_20250112_221513_072.jpg" alt="Product 4">
                     <h3>Lily Basket</h3>
                     <p>Price: $35</p>
                 </div>
-                <div class="product">
+                <div class="product" onclick="showModal('images/IMG_20250112_221153_320.jpg', 'Sunflower Vase', '$28', 'A cheerful sunflower vase for any occasion.')">
                     <img src="images/IMG_20250112_221153_320.jpg" alt="Product 5">
                     <h3>Sunflower Vase</h3>
                     <p>Price: $28</p>
                 </div>
-                <div class="product">
+                <div class="product" onclick="showModal('images/IMG_20250112_221128_974.jpg', 'Daisy Bundle', '$22', 'A sweet daisy bundle to spread joy.')">
                     <img src="images/IMG_20250112_221128_974.jpg" alt="Product 6">
                     <h3>Daisy Bundle</h3>
                     <p>Price: $22</p>
@@ -262,5 +303,36 @@
     <footer>
         <p>&copy; 2025 Julia Flowers. All rights reserved.</p>
     </footer>
+
+    <!-- Modal -->
+    <div id="productModal">
+        <div class="modal-content">
+            <span id="closeModal">&times;</span>
+            <img id="modalImage" src="" alt="Product Image">
+            <h3 id="modalTitle"></h3>
+            <p id="modalPrice"></p>
+            <p id="modalDescription"></p>
+        </div>
+    </div>
+
+    <script>
+        function showModal(image, title, price, description) {
+            document.getElementById('modalImage').src = image;
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalPrice').innerText = price;
+            document.getElementById('modalDescription').innerText = description;
+            document.getElementById('productModal').style.display = 'flex';
+        }
+
+        document.getElementById('closeModal').onclick = function() {
+            document.getElementById('productModal').style.display = 'none';
+        };
+
+        window.onclick = function(event) {
+            if (event.target.id === 'productModal') {
+                document.getElementById('productModal').style.display = 'none';
+            }
+        };
+    </script>
 </body>
 </html>
