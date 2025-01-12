@@ -48,19 +48,26 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        .products-container {
-            display: grid;
-            gap: 1rem;
+        .products-row {
+            display: flex;
             overflow-x: auto;
+            gap: 1rem;
             scroll-snap-type: x mandatory;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            margin-bottom: 1rem;
+        }
+
+        .products-row::-webkit-scrollbar {
+            display: none;
         }
 
         .product {
+            flex: 0 0 auto;
+            scroll-snap-align: center;
             border: 1px solid #ddd;
             border-radius: 8px;
             padding: 1rem;
             text-align: center;
+            width: 200px;
         }
 
         .product img {
@@ -152,7 +159,7 @@
         <!-- Products Section -->
         <div class="section" id="Products">
             <h2>Our Products</h2>
-            <div class="products-container">
+            <div class="products-row">
                 <div class="product">
                     <img src="images/IMG_20250112_221128_974.jpg" alt="Product 1">
                     <h3>Rose Bouquet</h3>
@@ -168,12 +175,24 @@
                     <h3>Orchid Pot</h3>
                     <p>Price: $40</p>
                 </div>
+            </div>
+            <div class="products-row">
                 <div class="product">
-                    <img src="images/IMG_20250112_221513_072.jpg" alt="Product 3">
-                    <h3>Orchid Pot</h3>
-                    <p>Price: $40</p>
+                    <img src="images/IMG_20250112_221513_072.jpg" alt="Product 4">
+                    <h3>Lily Basket</h3>
+                    <p>Price: $35</p>
                 </div>
-
+                <div class="product">
+                    <img src="images/IMG_20250112_221153_320.jpg" alt="Product 5">
+                    <h3>Sunflower Vase</h3>
+                    <p>Price: $28</p>
+                </div>
+                <div class="product">
+                    <img src="images/IMG_20250112_221128_974.jpg" alt="Product 6">
+                    <h3>Daisy Bundle</h3>
+                    <p>Price: $22</p>
+                </div>
+            </div>
         </div>
 
         <!-- Gallery Section -->
