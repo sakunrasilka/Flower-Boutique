@@ -48,45 +48,61 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        .products-container, .gallery-container {
+        .products-container {
             display: grid;
             gap: 1rem;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         }
 
-        .product, .gallery-item {
+        .product {
             border: 1px solid #ddd;
             border-radius: 8px;
             padding: 1rem;
             text-align: center;
         }
 
-        .product img, .gallery-item img {
+        .product img {
             max-width: 100%;
             border-radius: 8px;
         }
 
-        .feedback-form {
+        .gallery-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            flex: 0 0 auto;
+            scroll-snap-align: center;
+            border-radius: 8px;
+        }
+
+        .gallery-item img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .feedback-container {
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
+            gap: 1rem;
         }
 
-        .feedback-form input, .feedback-form textarea, .feedback-form button {
-            padding: 0.5rem;
-            border-radius: 8px;
+        .feedback-item {
+            display: flex;
+            gap: 1rem;
             border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
         }
 
-        .feedback-form button {
-            background-color: #98ef80;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        .feedback-form button:hover {
-            background-color: #86d46e;
+        .feedback-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
         }
 
         footer {
@@ -165,26 +181,43 @@
                     <img src="images/IMG_20250112_191331_341.jpg" alt="Gallery Image 3">
                 </div>
                 <div class="gallery-item">
-                    <img src="images/IMG_20250112_191335_591.jpg" alt="Gallery Image 3">
+                    <img src="images/IMG_20250112_191335_591.jpg" alt="Gallery Image 4">
                 </div>
                 <div class="gallery-item">
-                    <img src="images/IMG_20250112_191336_017.jpg" alt="Gallery Image 3">
+                    <img src="images/IMG_20250112_191336_017.jpg" alt="Gallery Image 5">
                 </div>
                 <div class="gallery-item">
-                    <img src="images/IMG_20250112_191336_370.jpg" alt="Gallery Image 3">
+                    <img src="images/IMG_20250112_191336_370.jpg" alt="Gallery Image 6">
                 </div>
             </div>
         </div>
 
         <!-- Feedback Section -->
         <div class="section" id="FeedBack">
-            <h2>Feedback</h2>
-            <form class="feedback-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Feedback" rows="4" required></textarea>
-                <button type="submit">Submit</button>
-            </form>
+            <h2>Customer Feedback</h2>
+            <div class="feedback-container">
+                <div class="feedback-item">
+                    <img src="https://via.placeholder.com/80" alt="Bouquet Image 1">
+                    <div>
+                        <p><strong>John Doe</strong></p>
+                        <p>The rose bouquet was stunning! My wife loved it. Thank you for the amazing service.</p>
+                    </div>
+                </div>
+                <div class="feedback-item">
+                    <img src="https://via.placeholder.com/80" alt="Bouquet Image 2">
+                    <div>
+                        <p><strong>Jane Smith</strong></p>
+                        <p>Beautiful tulip arrangement! It brightened up our dinner table perfectly.</p>
+                    </div>
+                </div>
+                <div class="feedback-item">
+                    <img src="https://via.placeholder.com/80" alt="Bouquet Image 3">
+                    <div>
+                        <p><strong>Emily Johnson</strong></p>
+                        <p>Orchid pot was just as described and delivered on time. Highly recommend!</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Contact Section -->
